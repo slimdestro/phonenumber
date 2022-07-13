@@ -1,4 +1,9 @@
 package main 
+/*
+	@ Commands:
+	- generate integer[how many phone numbers you want to generate]
+	- import csv_filePath[absolute path of CSV file]
+*/
 
 import (
 	"fmt" 
@@ -18,11 +23,6 @@ import (
 var generateNumbersFlag string
 
 func main(){
-	/*
-		@ Commands:
-		- generate integer
-		- import csv filePath
-	*/
 	flag.StringVar(&generateNumbersFlag, "o", "import", "100")
     flag.Parse()
     commandsArray := flag.Args()
