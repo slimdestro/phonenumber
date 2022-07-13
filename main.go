@@ -8,7 +8,9 @@ import (
 	"math/rand"
 	"regexp"
 	"github.com/nyaruka/phonenumbers" 
+	"time"
 	"encoding/csv"
+	"path/filepath"
 	"log"
 	"os"
 )
@@ -20,7 +22,6 @@ func main(){
 		@ Commands:
 		- generate integer
 		- import csv filePath
-		- mb key : aIPOvms9a1U7tad8Z8wA6WEVx
 	*/
 	flag.StringVar(&generateNumbersFlag, "o", "import", "100")
     flag.Parse()
@@ -44,7 +45,15 @@ func main(){
 */
 func generateNumbers(limit string) string {
 	var phoneNumbersOutput []string
-	csvFile, err := os.Create("PhoneNumbersGenerated.csv")
+	r1 := rand.New(rand.NewSource(time.Now().UnixNano()))
+	err := os.Mkdir("Records", 0750)
+	if err != nil && !os.IsExist(err){
+		log.Fatal(err)
+	}
+	// make filename random using unixtimestamp
+	randFileName := filepath.FromSlash("Records/PhoneNumbersGenerated_" + strconv.Itoa(r1.Intn(1000000000)) + "_.csv")
+	csvFile, err := os.Create(randFileName)
+
 	defer csvFile.Close()
 	if err != nil{
 		log.Fatal(err)
@@ -60,7 +69,7 @@ func generateNumbers(limit string) string {
 		
 	}
 	w.Write(phoneNumbersOutput)
-	return "Numbers saved to PhoneNumbersGenerated.csv"
+	return "Numbers saved to " + randFileName
 }
 
 /*

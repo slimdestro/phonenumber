@@ -4,7 +4,9 @@ Instructions to Run the Software:
 - Open CMD in the same folder(cd c:/program)
 
 - To Generate phone Numbers run following command:
-/> honescript.exe generate 500
+/> phonescript.exe generate 500
 
 - To Import & Validate phone Numbers run following command:
 /> phonescript.exe import /PhoneNumbersGenerated.csv
+
+phonescript.exe import 
