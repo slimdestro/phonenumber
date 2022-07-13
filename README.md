@@ -52,4 +52,4 @@ func main(){
 
 ## Author
 
-[slimdestro(Mukul Mishra)](https://dev.to/slimdestro)
+[slimdestro(Mukul Mishra)](https://linktr.ee/slimdestro)
