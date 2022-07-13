@@ -35,16 +35,16 @@ func main(){
     flag.Parse()
     commandsArray := flag.Args()
 
-switch commandsArray[0] {
-case "generate":
-	phonescript.GenerateNumbers(commandsArray[1])
-	return
-case "import":
-	phonescript.ValidateNumbers(commandsArray[1])
-	return
-default:
-	fmt.Println("Invalid output")
-}
+	switch commandsArray[0] {
+	case "generate":
+		phonescript.GenerateNumbers(commandsArray[1])
+		return
+	case "import":
+		phonescript.ValidateNumbers(commandsArray[1])
+		return
+	default:
+		fmt.Println("Invalid output")
+	}
 }
  
 ```
