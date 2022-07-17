@@ -34,7 +34,7 @@ func main(){
     flag.StringVar(&generateNumbersFlag, "o", "import", "100")
     flag.Parse()
     commandsArray := flag.Args()
-
+	
 	// show Hints instead Index out of range 
 	if len(commandsArray) == 0{
 		fmt.Println("Forgort ? (generate | validate)")
