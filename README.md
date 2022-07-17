@@ -37,7 +37,7 @@ func main(){
 	
 	// show Hints instead Index out of range 
 	if len(commandsArray) == 0{
-		fmt.Println("Forgort ? (generate | validate)")
+		fmt.Println("Forgort ? (generate | import)")
 		return
 	}
 
