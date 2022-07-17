@@ -35,6 +35,12 @@ func main(){
     flag.Parse()
     commandsArray := flag.Args()
 
+	// show Hints instead Index out of range 
+	if len(commandsArray) == 0{
+		fmt.Println("Forgort ? (generate | validate)")
+		return
+	}
+
 	switch commandsArray[0] {
 	case "generate":
 		phonescript.GenerateNumbers(commandsArray[1])
@@ -52,4 +58,4 @@ func main(){
 
 ## Author
 
-[slimdestro(Mukul Mishra)](https://dev.to/slimdestro)
+[slimdestro(Mukul Mishra)](https://linktr.ee/slimdestro)
