@@ -5,13 +5,13 @@
  
 ## Installation
 
-Install the package by doing get get:
+Install the package by doing go get:
 
 ```sh
 go get github.com/slimdestro/phonenumber/phonescript
 ```
 
-Two Methods that is exported and can be used in your module are:
+Two exported methods that you can use in your modules are:
 
 ```sh
 GenerateNumbers(10000) 
